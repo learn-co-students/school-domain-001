@@ -10,9 +10,7 @@ class School
   attr_accessor :school_name, :roster
 
   def add_student(student_name, grade)
-    unless @roster[grade]
-      @roster[grade] = []
-    end
+    @roster[grade] ||= []
     @roster[grade] << student_name
   end
 
